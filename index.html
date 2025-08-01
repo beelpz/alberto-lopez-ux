@@ -1,421 +1,50 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Alberto López Martínez - UX Research Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #f5f5f5;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: #fff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #555;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #3498db;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8rem 0 4rem;
-            margin-top: 60px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            margin-top: 1.5rem;
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        /* About Section */
-        .about {
-            padding: 4rem 0;
-            background: #fff;
-        }
-
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 2rem;
-        }
-
-        .about p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            text-align: left;
-        }
-
-        /* Process Section */
-        .process-section {
-            background: #fff;
-            padding: 4rem 0;
-        }
-
-        .process-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 3rem;
-        }
-
-        .process-diagram {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .process-step {
-            flex: 1;
-            text-align: center;
-            min-width: 180px;
-            background: #f8f9fa;
-            padding: 2rem 1rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: #3498db;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 1rem;
-        }
-
-        .process-step h3 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-        }
-
-        .process-step p {
-            font-size: 0.9rem;
-            color: #666;
-            line-height: 1.4;
-        }
-
-        .process-arrow {
-            font-size: 2rem;
-            color: #3498db;
-            margin: 0 -20px;
-        }
-
-        /* Skills Section */
-        .skills {
-            background: #f8f9fa;
-            padding: 4rem 0;
-        }
-
-        .skills h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 3rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .skill-card h3 {
-            color: #3498db;
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-
-        .skill-card ul {
-            list-style: none;
-        }
-
-        .skill-card li {
-            padding: 0.5rem 0;
-            border-bottom: 1px solid #e0e0e0;
-        }
-
-        .skill-card li:last-child {
-            border-bottom: none;
-        }
-
-        /* Case Studies Section */
-        .case-studies {
-            padding: 4rem 0;
-            background: #fff;
-        }
-
-        .case-studies h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            color: #2c3e50;
-            margin-bottom: 3rem;
-        }
-
-        .case-study-section {
-            margin-bottom: 6rem;
-            background: #f8f9fa;
-            padding: 3rem;
-            border-radius: 12px;
-        }
-
-        .case-study-section h3 {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-bottom: 2rem;
-        }
-
-        .case-content {
-            margin-bottom: 2rem;
-        }
-
-        .case-content h4 {
-            color: #3498db;
-            margin: 1.5rem 0 1rem;
-        }
-
-        .case-content ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .case-content li {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Tags */
-        .tags {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        .tag {
-            background: #e0e0e0;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            color: #555;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .process-diagram {
-                flex-direction: column;
-            }
-
-            .process-arrow {
-                transform: rotate(90deg);
-                margin: 10px 0;
-            }
-
-            .image-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .image-grid .image-container:nth-child(1) {
-                border-right: none;
-                border-bottom: 2px solid #e0e0e0;
-            }
-
-            .ppc-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="robots" content="noindex, nofollow"/>
+  <title>Alberto López Martínez - UX Research Portfolio</title>
 </head>
 <body>
-    <!-- Navigation -->
-    <header>
-        <nav class="container">
-            <div class="logo">Alberto López Martínez</div>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#cases">Case Studies</a></li>
-            </ul>
-        </nav>
-    </header>
+  <h1>Case Study: Splash Screen Redesign</h1>
+  <p>Improved recognition and clarity for new users by redesigning the splash screen after conducting usability tests.</p>
+  <div>
+    <img src="splash_before.png" alt="Splash screen before redesign" width="400"/>
+    <img src="splash_after.png" alt="Splash screen after redesign" width="400"/>
+  </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Alberto López Martínez</h1>
-            <p>User Research + UX Design</p>
-            <p style="font-size: 1.1rem; margin-top: 1rem;">Transforming mobile gaming experiences through data-driven insights and user-centered design</p>
-            <div class="contact-info">
-                alberto.lopez.mart22@gmail.com | LinkedIn: www.linkedin.com/in/alberto-lópez-m | Mexico City
-            </div>
-        </div>
-    </section>
+  <h1>Case Study: Gacha Banner Update</h1>
+  <p>Enhancing premium appeal of the gacha system through visual clarity and character prominence.</p>
+  <div>
+    <img src="gacha_before.png" alt="Original gacha banner" width="400"/>
+    <img src="gacha_after.png" alt="Updated gacha banner" width="400"/>
+  </div>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="container">
-            <div class="about-content">
-                <h2>About Me</h2>
-                <p>I'm a User Researcher specializing in mobile gaming, with expertise in transforming player insights into actionable UX improvements for Free Fire, LATAM's leading Battle Royale game. My approach combines rigorous research methodologies with cultural localization to create experiences that resonate with millions of players.</p>
-                <p>I excel at bridging research and design, leading cross-functional initiatives that have significantly improved CTR, conversions, and player sentiment through strategic visual communication and cohesive design systems.</p>
-            </div>
-        </div>
-    </section>
+  <h1>Case Study: Navigation Tabs Revamp</h1>
+  <div>
+    <img src="tabs_before.png" alt="Before navigation tab redesign" width="400"/>
+    <img src="tabs_after.png" alt="After navigation tab redesign" width="400"/>
+  </div>
 
-    <!-- Case Studies Section -->
-    <section class="case-studies" id="cases">
-        <div class="container">
-            <h2>Case Studies</h2>
+  <h1>Case Study: Evo Event Layout</h1>
+  <div>
+    <img src="evo_before.png" alt="Evo event layout before" width="400"/>
+    <img src="evo_after.png" alt="Evo event layout after" width="400"/>
+  </div>
 
-            <!-- Case Study 1 -->
-            <div class="case-study-section">
-                <h3>Visual Communication Overhaul for LATAM Players</h3>
-                <div class="case-content">
-                    <h4>Challenge</h4>
-                    <p>Free Fire faced critical visual inconsistency issues. The Revenue team created new Look & Feel designs weekly while campaigns ran for 1-2 months, causing confusion between lobby, shop, and promotional banners. LATAM players strongly prefer visual communication over text.</p>
-                    <h4>Research Process</h4>
-                    <ul>
-                        <li>Analyzed CTR data and heatmaps to identify interaction patterns</li>
-                        <li>Conducted in-game surveys for initial feedback</li>
-                        <li>Created mockups with marketing and design teams</li>
-                        <li>Ran FGDs with 24 players across 4 segments (paying hardcore, active F2P, new users, non-players)</li>
-                        <li>Monitored real-time interactions through behavioral observation</li>
-                    </ul>
+  <h1>Case Study: Tower Event Presentation</h1>
+  <div>
+    <img src="tower_before.png" alt="Tower event before" width="400"/>
+    <img src="tower_after.png" alt="Tower event after" width="400"/>
+  </div>
 
-                    <h4>Key Insights</h4>
-                    <ul>
-                        <li>LATAM players strongly prefer visual communication over text</li>
-                        <li>Visual inconsistency between game areas caused confusion</li>
-                        <li>Clear, cohesive L&F significantly improves navigation</li>
-                        <li>Campaign visibility improved with aligned visual elements</li>
-                    </ul>
-
-                    <h4>Solution</h4>
-                    <p>Implemented comprehensive visual communication strategy with drastically reduced text, unified Look & Feel system across all touchpoints, and design guidelines ensuring consistency while allowing campaign creativity.</p>
-                </div>
-
-                <!-- Visual Design Before/After -->
-                <div class="image-grid">
-                    <div class="image-container">
-                        <img src="splash_before.png" alt="Original splash banner">
-                        <p class="image-caption">Before: Text-heavy approach that diminishes rewards</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="splash_after.png" alt="Redesigned splash banner">
-                        <p class="image-caption">After: Visual communication with minimal text that highlights rewards</p>
-                    </div>
-                </div>
-                
-                <!-- Gacha Banner Before/After -->
-                <div class="image-grid">
-                    <div class="image-container">
-                        <img src="gacha_before.png" alt="Original gacha banner">
-                        <p class="image-caption">Before: Cluttered text layout</p>
-                    </div>
-                    <div class="image-container">
-                        <img src="gacha_after.png" alt="Redesigned gacha banner">
-                        <p class="image-caption">After: Premium weapon showcase</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
+  <h1>Case Study: Battle Pass Visuals</h1>
+  <div>
+    <img src="pass_before.png" alt="Battle pass visuals before" width="400"/>
+    <img src="pass_after.png" alt="Battle pass visuals after" width="400"/>
+  </div>
 </body>
 </html>
+
