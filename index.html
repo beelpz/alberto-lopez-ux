@@ -1,10 +1,421 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    // ...existing code for head section and styles...
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Alberto López Martínez - UX Research Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        nav a {
+            text-decoration: none;
+            color: #555;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #3498db;
+        }
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8rem 0 4rem;
+            margin-top: 60px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .contact-info {
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        .about {
+            padding: 4rem 0;
+            background: #fff;
+        }
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .about h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+        .about p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            text-align: left;
+        }
+        .process-section {
+            background: #fff;
+            padding: 4rem 0;
+        }
+        .process-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+        }
+        .process-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .process-step {
+            flex: 1;
+            text-align: center;
+            min-width: 180px;
+            background: #f8f9fa;
+            padding: 2rem 1rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: #3498db;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        .process-step h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+        .process-step p {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.4;
+        }
+        .process-arrow {
+            font-size: 2rem;
+            color: #3498db;
+            margin: 0 -20px;
+        }
+        .skills {
+            background: #f8f9fa;
+            padding: 4rem 0;
+        }
+        .skills h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .skill-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .skill-card h3 {
+            color: #3498db;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        .skill-card ul {
+            list-style: none;
+        }
+        .skill-card li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .skill-card li:last-child {
+            border-bottom: none;
+        }
+        .case-studies {
+            padding: 4rem 0;
+            background: #fff;
+        }
+        .case-studies h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+        }
+        .case-study-section {
+            margin-bottom: 6rem;
+            background: #f8f9fa;
+            padding: 3rem;
+            border-radius: 12px;
+        }
+        .case-study-section h3 {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+        .case-content {
+            margin-bottom: 2rem;
+        }
+        .case-content h4 {
+            color: #3498db;
+            margin: 1.5rem 0 1rem;
+        }
+        .case-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        .case-content li {
+            margin-bottom: 0.5rem;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .image-container {
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .image-caption {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+        }
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .metric {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .metric-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3498db;
+        }
+        .metric-label {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        .tag {
+            background: #e0e0e0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1.1rem;
+            }
+            .process-diagram {
+                flex-direction: column;
+            }
+            .process-arrow {
+                transform: rotate(90deg);
+                margin: 10px 0;
+            }
+            .image-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    // ...existing code for sections up to Case Studies...
+    <!-- Navigation -->
+    <header>
+        <nav class="container">
+            <div class="logo">Alberto López Martínez</div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#cases">Case Studies</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Alberto López Martínez</h1>
+            <p>User Research + UX Design</p>
+            <p style="font-size: 1.1rem; margin-top: 1rem;">Transforming mobile gaming experiences through data-driven insights and user-centered design</p>
+            <div class="contact-info">
+                alberto.lopez.mart22@gmail.com | LinkedIn: www.linkedin.com/in/alberto-lópez-m | Mexico City
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>I'm a User Researcher specializing in mobile gaming, with expertise in transforming player insights into actionable UX improvements for Free Fire, LATAM's leading Battle Royale game. My approach combines rigorous research methodologies with cultural localization to create experiences that resonate with millions of players.</p>
+                <p>I excel at bridging research and design, leading cross-functional initiatives that have significantly improved CTR, conversions, and player sentiment through strategic visual communication and cohesive design systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Process Section -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <h2>Research Methodology</h2>
+            <div class="process-diagram">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discover</h3>
+                    <p>Analytics Review • Heatmaps • Player Behavior • In-game Surveys</p>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Define</h3>
+                    <p>Problem Framing • User Segmentation • Success Metrics • Hypotheses</p>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Design</h3>
+                    <p>Collaborative Ideation • Mockups • Prototypes • A/B Variants</p>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Test</h3>
+                    <p>FGDs • Usability Testing • Live Monitoring • Behavior Analysis</p>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Implement</h3>
+                    <p>Stakeholder Alignment • Rollout Support • Performance Tracking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Research Methods</h3>
+                    <ul>
+                        <li>User Interviews & FGDs</li>
+                        <li>Usability Testing</li>
+                        <li>A/B Testing</li>
+                        <li>Analytics & Heatmaps</li>
+                        <li>In-game Surveys</li>
+                        <li>Behavioral Observation</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Gaming UX Expertise</h3>
+                    <ul>
+                        <li>Player Journey Mapping</li>
+                        <li>Monetization UX</li>
+                        <li>Retention Mechanics</li>
+                        <li>LATAM Market Localization</li>
+                        <li>F2P Economy Design</li>
+                        <li>Battle Pass & Events UX</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Design & Tools</h3>
+                    <ul>
+                        <li>Figma / Adobe XD / Sketch</li>
+                        <li>Game Analytics Platforms</li>
+                        <li>Heatmap Tools</li>
+                        <li>Design Systems</li>
+                        <li>Visual Communication</li>
+                        <li>Cross-functional Collaboration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Case Studies Section -->
     <section class="case-studies" id="cases">
@@ -14,31 +425,169 @@
             <!-- Case Study 1 -->
             <div class="case-study-section">
                 <h3>Visual Communication Overhaul for LATAM Players</h3>
-                // ...existing Case Study 1 content...
-                <div class="metrics">
-                    // ...existing metrics...
+                <div class="case-content">
+                    <h4>Challenge</h4>
+                    <p>Free Fire faced critical visual inconsistency issues. The Revenue team created new Look & Feel designs weekly while campaigns ran for 1-2 months, causing confusion between lobby, shop, and promotional banners. LATAM players strongly prefer visual communication over text.</p>
+                    
+                    <h4>Research Process</h4>
+                    <ul>
+                        <li>Analyzed CTR data and heatmaps to identify interaction patterns</li>
+                        <li>Conducted in-game surveys for initial feedback</li>
+                        <li>Created mockups with marketing and design teams</li>
+                        <li>Ran FGDs with 24 players across 4 segments (paying hardcore, active F2P, new users, non-players)</li>
+                        <li>Monitored real-time interactions through behavioral observation</li>
+                    </ul>
+                    
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li>LATAM players strongly prefer visual communication over text</li>
+                        <li>Visual inconsistency between game areas caused confusion</li>
+                        <li>Clear, cohesive L&F significantly improves navigation</li>
+                        <li>Campaign visibility improved with aligned visual elements</li>
+                    </ul>
+                    
+                    <h4>Solution</h4>
+                    <p>Implemented comprehensive visual communication strategy with drastically reduced text, unified Look & Feel system across all touchpoints, and design guidelines ensuring consistency while allowing campaign creativity.</p>
                 </div>
+
+                <h4>Visual Transformations</h4>
+                
+                <!-- Before/After examples -->
+                <div class="image-grid">
+                    <div class="image-container">
+                        <img src="splash_before.png" alt="Original splash banner">
+                        <p class="image-caption">Before: Text-heavy approach</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="splash_after.png" alt="Redesigned splash banner">
+                        <p class="image-caption">After: Visual-first communication</p>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">↑</div>
+                        <div class="metric-label">CTR Improved</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">↑</div>
+                        <div class="metric-label">Conversions</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">↑</div>
+                        <div class="metric-label">Player Sentiment</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">3 mo</div>
+                        <div class="metric-label">Duration</div>
+                    </div>
+                </div>
+
                 <div class="tags">
-                    // ...existing tags...
+                    <span class="tag">Visual Design</span>
+                    <span class="tag">Localization</span>
+                    <span class="tag">Design Systems</span>
+                    <span class="tag">A/B Testing</span>
                 </div>
             </div>
 
             <!-- Case Study 2 -->
             <div class="case-study-section">
                 <h3>Physical PPC Card Redesign</h3>
-                // ...existing Case Study 2 content...
-                <div class="metrics">
-                    // ...existing metrics...
+                <div class="case-content">
+                    <h4>Challenge</h4>
+                    <p>Physical prepaid cards for in-game currency needed optimization to improve conversion rates, brand visibility, and value perception in retail environments.</p>
+                    
+                    <h4>Research Process</h4>
+                    <ul>
+                        <li>Created 6 different card design variants</li>
+                        <li>Tested with current PPC users, non-users, and players using other payment methods</li>
+                        <li>Optimized colors, character selection, information hierarchy, and layout</li>
+                        <li>Iteratively refined based on multi-segment feedback</li>
+                    </ul>
+                    
+                    <h4>Key Insights</h4>
+                    <ul>
+                        <li>Character prominence significantly impacted brand recognition</li>
+                        <li>Color choices affected perceived value and game association</li>
+                        <li>Information hierarchy was crucial for retail visibility</li>
+                        <li>Physical card design influenced digital payment method preferences</li>
+                    </ul>
+                    
+                    <h4>Solution</h4>
+                    <p>Developed optimized card design with prominent character artwork, strategic color usage, clear value proposition, and improved information hierarchy balancing shelf appeal with brand consistency.</p>
                 </div>
+
+                <h4>Design Evolution</h4>
+                <div class="image-grid">
+                    <div class="image-container">
+                        <img src="card_before.png" alt="Original card design">
+                        <p class="image-caption">Before: Original retail card design</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="card_after.png" alt="Redesigned card">
+                        <p class="image-caption">After: Optimized for visibility and appeal</p>
+                    </div>
+                </div>
+
+                <div class="metrics">
+                    <div class="metric">
+                        <div class="metric-value">↑</div>
+                        <div class="metric-label">Brand Perception</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">↑</div>
+                        <div class="metric-label">Conversions</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">6</div>
+                        <div class="metric-label">Variants Tested</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">↑</div>
+                        <div class="metric-label">Awareness</div>
+                    </div>
+                </div>
+
                 <div class="tags">
-                    // ...existing tags...
+                    <span class="tag">Physical Product</span>
+                    <span class="tag">A/B Testing</span>
+                    <span class="tag">Brand Design</span>
                 </div>
             </div>
 
             <!-- Case Study 3 -->
             <div class="case-study-section">
                 <h3>Comprehensive In-Game Banner System</h3>
-                // ...existing Case Study 3 content...
+                <div class="case-content">
+                    <h4>Challenge</h4>
+                    <p>Free Fire needed a unified banner system for diverse content including events, offers, features, ranked seasons, patches, and collaborations without disrupting gameplay flow.</p>
+                    
+                    <h4>Research Process</h4>
+                    <ul>
+                        <li>Catalogued all banner types and purposes</li>
+                        <li>Mapped player journey from splash to gameplay</li>
+                        <li>Conducted heatmap studies for optimal placement</li>
+                        <li>Validated with focus groups</li>
+                        <li>Tracked CTR, participation rates, DAU/MAU, and bounce rates</li>
+                    </ul>
+                    
+                    <h4>Solution</h4>
+                    <p>Created comprehensive banner ecosystem with unified visual language, minimal text approach, and strategic placement hierarchy. Implemented flexible templates for quick updates while maintaining design integrity.</p>
+                </div>
+
+                <h4>Banner System Components</h4>
+                <div class="image-grid">
+                    <div class="image-container">
+                        <img src="banner_before.png" alt="Original banner system">
+                        <p class="image-caption">Before: Inconsistent banner system</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="banner_after.png" alt="New banner system">
+                        <p class="image-caption">After: Unified banner ecosystem</p>
+                    </div>
+                </div>
+
                 <div class="metrics">
                     <div class="metric">
                         <div class="metric-value">↑</div>
@@ -57,6 +606,7 @@
                         <div class="metric-label">Bounce Rate</div>
                     </div>
                 </div>
+
                 <div class="tags">
                     <span class="tag">Information Architecture</span>
                     <span class="tag">User Flow</span>
@@ -64,6 +614,3 @@
                 </div>
             </div>
         </div>
-    </section>
-</body>
-</html>
