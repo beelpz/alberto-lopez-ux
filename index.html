@@ -235,6 +235,7 @@
             margin-bottom: 3rem;
         }
 
+        /* Individual Case Study */
         .case-study-section {
             margin-bottom: 6rem;
             background: #f8f9fa;
@@ -264,6 +265,49 @@
 
         .case-content li {
             margin-bottom: 0.5rem;
+        }
+
+        /* Image grids */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin: 2rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .image-container {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Before section - left side */
+        .image-grid .image-container:nth-child(1) {
+            background: #fdf0f0;
+            border-right: 2px solid #e0e0e0;
+        }
+
+        /* After section - right side */
+        .image-grid .image-container:nth-child(2) {
+            background: #f0fdf0;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: #f0f0f0;
+        }
+
+        .image-caption {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
         }
 
         /* Tags */
@@ -358,18 +402,95 @@
         </div>
     </section>
 
+    <!-- Research Process Section -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <h2>Research Methodology</h2>
+            <div class="process-diagram">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discover</h3>
+                    <p>Analytics Review • Heatmaps • Player Behavior • In-game Surveys</p>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Define</h3>
+                    <p>Problem Framing • User Segmentation • Success Metrics • Hypotheses</p>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Design</h3>
+                    <p>Collaborative Ideation • Mockups • Prototypes • A/B Variants</p>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Test</h3>
+                    <p>FGDs • Usability Testing • Live Monitoring • Behavior Analysis</p>
+                </div>
+                <div class="process-arrow">→</div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Implement</h3>
+                    <p>Stakeholder Alignment • Rollout Support • Performance Tracking</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2>Skills & Methods</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Research Methods</h3>
+                    <ul>
+                        <li>User Interviews & FGDs</li>
+                        <li>Usability Testing</li>
+                        <li>A/B Testing</li>
+                        <li>Analytics & Heatmaps</li>
+                        <li>In-game Surveys</li>
+                        <li>Behavioral Observation</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Gaming UX Expertise</h3>
+                    <ul>
+                        <li>Player Journey Mapping</li>
+                        <li>Monetization UX</li>
+                        <li>Retention Mechanics</li>
+                        <li>LATAM Market Localization</li>
+                        <li>F2P Economy Design</li>
+                        <li>Battle Pass & Events UX</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Design & Tools</h3>
+                    <ul>
+                        <li>Figma / Adobe XD / Sketch</li>
+                        <li>Game Analytics Platforms</li>
+                        <li>Heatmap Tools</li>
+                        <li>Design Systems</li>
+                        <li>Visual Communication</li>
+                        <li>Cross-functional Collaboration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Case Studies Section -->
     <section class="case-studies" id="cases">
         <div class="container">
             <h2>Case Studies</h2>
-
-            <!-- Case Study 1 -->
             <div class="case-study-section">
                 <h3>Visual Communication Overhaul for LATAM Players</h3>
                 <div class="case-content">
                     <h4>Challenge</h4>
                     <p>Free Fire faced critical visual inconsistency issues. The Revenue team created new Look & Feel designs weekly while campaigns ran for 1-2 months, causing confusion between lobby, shop, and promotional banners. LATAM players strongly prefer visual communication over text.</p>
-
                     <h4>Research Process</h4>
                     <ul>
                         <li>Analyzed CTR data and heatmaps to identify interaction patterns</li>
@@ -378,7 +499,6 @@
                         <li>Ran FGDs with 24 players across 4 segments (paying hardcore, active F2P, new users, non-players)</li>
                         <li>Monitored real-time interactions through behavioral observation</li>
                     </ul>
-
                     <h4>Key Insights</h4>
                     <ul>
                         <li>LATAM players strongly prefer visual communication over text</li>
@@ -386,7 +506,6 @@
                         <li>Clear, cohesive L&F significantly improves navigation</li>
                         <li>Campaign visibility improved with aligned visual elements</li>
                     </ul>
-
                     <h4>Solution</h4>
                     <p>Implemented comprehensive visual communication strategy with drastically reduced text, unified Look & Feel system across all touchpoints, and design guidelines ensuring consistency while allowing campaign creativity.</p>
                 </div>
@@ -415,7 +534,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 </body>
